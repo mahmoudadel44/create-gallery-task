@@ -1,0 +1,7 @@
+.arrowLeft {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  z-index: 999;
+  /* background-color: red; */
+}
