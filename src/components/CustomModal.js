@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+//comppnents
+import Arrows from "./Arrows";
+import "../styles/Arrows.css";
+
 //Css
 import "../styles/customModal.css";
 
@@ -9,25 +13,39 @@ const CustomModal = ({
   index,
   length,
   currentTitle,
+  setCurrentImg,
 }) => {
-  const [show, setShow] = useState(true);
-  const hideModal = () => {
-    setShow(false);
+  const hideModal = (e) => {
+    if (e.target.classList.contains("hide")) {
+      setCurrentImg(null);
+    }
   };
 
   console.log("length", length);
   return (
-    <div className="overlay" onClick={hideModal}>
-      <img src={currentImg} alt="currentimg" />
-      <h1 onClick={hideModal}>&times;</h1>
-      <div></div>
-
-      <h1>
-        image {index + 1} of {length}
-      </h1>
-      <h1>{currentTitle}</h1>
-
-    </div>
+    <>
+      <div className="overlay hide" onClick={hideModal}>
+        <div className="inernalOverlay">
+          <div className="imgContainer">
+            <img src={currentImg} alt="currentimg" />
+            <div className="titleContainer">
+              <span className="text-center text-white">{currentTitle}</span>
+            </div>
+          </div>
+          <div className="imagesNumber mb-5">
+            <span className="text-white">
+              image {index + 1} of {length}
+            </span>
+          </div>
+          {/* <Arrows handleMoveToLeft={handleMoveToLeft} /> */}
+          <div className="arrowLeft" onClick={handleMoveToLeft}>
+            <div>
+              <i class="fa-solid fa-chevron-left fa-3x text-white"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
