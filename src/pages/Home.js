@@ -18,10 +18,12 @@ const Home = () => {
   return (
     <section>
       <div className="container">
+        <h1 className="text-center my-5">Gallery</h1>
         <div className="row">
-          {images.map((data) => (
-            <SingleImg data={data} />
-          ))}
+          {images &&
+            images.map((data, index) => (
+              <SingleImg data={data} index={index} />
+            ))}
         </div>
       </div>
     </section>
