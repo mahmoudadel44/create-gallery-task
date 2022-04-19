@@ -1,16 +1,32 @@
-import React from "react";
-import { Modal } from "react-bootstrap";
+import React, { useState } from "react";
 
-const CustomModal = ({ show, handleClose }) => {
+//Css
+import "../styles/customModal.css";
+
+const CustomModal = ({
+  currentImg,
+  handleMoveToLeft,
+  index,
+  length,
+  currentTitle,
+}) => {
+  const [show, setShow] = useState(true);
+  const hideModal = () => {
+    setShow(false);
+  };
+
+  console.log("length", length);
   return (
-    <div className="all">
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer></Modal.Footer>
-      </Modal>
+    <div className="overlay" onClick={hideModal}>
+      <img src={currentImg} alt="currentimg" />
+      <h1 onClick={hideModal}>&times;</h1>
+      <div></div>
+
+      <h1>
+        image {index + 1} of {length}
+      </h1>
+      <h1>{currentTitle}</h1>
+
     </div>
   );
 };
