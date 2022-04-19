@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import SingleImg from "../components/SingleImg";
 
 const Home = () => {
   const [images, setImages] = useState([]);
@@ -19,9 +20,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           {images.map((data) => (
-            <div className="col-md-6 mb-3">
-              <img src={data.url} />
-            </div>
+            <SingleImg data={data} />
           ))}
         </div>
       </div>
