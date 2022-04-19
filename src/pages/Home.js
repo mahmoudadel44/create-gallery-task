@@ -22,7 +22,7 @@ const Home = () => {
         <div className="row">
           {images &&
             images.map((data, index) => (
-              <SingleImg data={data} index={index} />
+              <SingleImg data={data} index={index} length={images.length} />
             ))}
         </div>
       </div>
