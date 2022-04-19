@@ -1,21 +1,23 @@
-// import React from "react";
-// import "../styles/Arrows.css";
-// const Arrows = ({ handleMoveToLeft }) => {
-//   return (
-//     <>
-//       <div className="arrowLeft" onClick={handleMoveToLeft}>
-//         {/* <div>
-//           <i class="fa-solid fa-chevron-left fa-3x"></i>
-//         </div> */}
-//         Prevvvvvvvvvvvvvvvvvv
-//       </div>
-//       {/* <div className="arrowLeft" onClick={handleMoveToLeft}>
-//         <div>
-//           <i class="fa-solid fa-chevron-left fa-3x"></i>
-//         </div>
-//       </div> */}
-//     </>
-//   );
-// };
+import React from "react";
 
-// export default Arrows;
+//Css
+import "../styles/Arrows.css";
+
+const Arrows = ({ handleMoveToRight, handleMoveToLeft }) => {
+  return (
+    <>
+      <div className="arrowLeft" onClick={handleMoveToRight}>
+        <div className="text-white">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+      </div>
+      <div className="arrowRight">
+        <div className="text-white">
+          <i class="fa-solid fa-chevron-right" onClick={handleMoveToLeft}></i>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Arrows;

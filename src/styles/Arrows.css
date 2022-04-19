@@ -1,7 +1,15 @@
-.arrowLeft {
+.arrowLeft,
+.arrowRight {
   position: absolute;
-  left: 20px;
-  top: 50%;
   z-index: 999;
-  /* background-color: red; */
+  top: 50%;
+}
+.arrowLeft {
+  left: 20px;
+}
+.arrowRight {
+  right: 20px;
+}
+.fa-solid {
+  font-size: 22px;
 }
