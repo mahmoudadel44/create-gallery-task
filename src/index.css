@@ -3,9 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.all {
-  position: absolute;
-  top: 0;
-  z-index: 100;
+body {
+  background: #eee;
 }

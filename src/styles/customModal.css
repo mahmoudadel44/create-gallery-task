@@ -8,17 +8,16 @@
   background: rgba(9, 9, 9, 0.541);
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  z-index: 1050;
+  z-index: 300;
 }
 .inernalOverlay {
   position: absolute;
   bottom: 20px;
   left: 0;
   right: 0;
-  max-width: 80%;
-  height: 80%;
-  /* background: rgba(0, 0, 0, 0.541); */
+  width: 86%;
+  height: 77%;
+  background: rgba(0, 0, 0, 0.541);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +25,16 @@
   z-index: 300;
   margin: auto;
 }
-
+.overlay .inernalOverlay .close {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  right: 10px;
+  top: 2px;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 2200;
+}
 .overlay .imgContainer {
   box-shadow: rgba(0, 0, 0, 0.9) 0px 2px 8px 0px;
   margin: auto;
@@ -44,4 +52,21 @@
   display: flex;
   justify-content: center;
   padding: 4px 0;
+}
+.overlay .imagesNumber span {
+  background-color: #1c1c1c;
+  padding: 4px 8px;
+}
+
+.singleImgContainer {
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .inernalOverlay {
+    width: 100%;
+  }
+  .imgContainer {
+    width: 50%;
+  }
 }

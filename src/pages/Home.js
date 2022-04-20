@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+//Components
 import SingleImg from "../components/SingleImg";
+import CustomModal from "../components/CustomModal";
 
 const Home = () => {
   const [images, setImages] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [img, setCurrentImg] = useState(null);
 
   const getImages = async () => {
     const allImages = await axios.get(
@@ -11,25 +16,36 @@ const Home = () => {
     );
     setImages(allImages.data);
   };
+  
   useEffect(() => {
     getImages();
   }, []);
-  console.log("images", images);
+
   return (
     <section>
       <div className="container">
         <h1 className="text-center my-5">Gallery</h1>
         <div className="row">
           {images &&
-            images.map((data, index) => (
+            images.map((data) => (
               <SingleImg
                 data={data}
-                index={index}
-                length={images.length}
                 key={data.uuid}
+                handleClick={() => {
+                  setShowModal(true);
+                  setCurrentImg(data);
+                }}
               />
             ))}
         </div>
+        {showModal && (
+          <CustomModal
+            currentImg={img}
+            data={images}
+            onClose={setShowModal}
+            setCurrentImg={setCurrentImg}
+          />
+        )}
       </div>
     </section>
   );

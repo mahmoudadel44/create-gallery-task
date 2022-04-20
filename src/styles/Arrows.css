@@ -3,6 +3,7 @@
   position: absolute;
   z-index: 999;
   top: 50%;
+  cursor: pointer;
 }
 .arrowLeft {
   left: 20px;
