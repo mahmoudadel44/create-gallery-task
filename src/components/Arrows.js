@@ -8,12 +8,12 @@ const Arrows = ({ handleMoveToRight, handleMoveToLeft }) => {
     <>
       <div className="arrowLeft" onClick={handleMoveToLeft}>
         <div className="text-white">
-          <i class="fa-solid fa-chevron-left"></i>
+          <i className="fa-solid fa-chevron-left"></i>
         </div>
       </div>
       <div className="arrowRight">
         <div className="text-white">
-          <i class="fa-solid fa-chevron-right" onClick={handleMoveToRight}></i>
+          <i className="fa-solid fa-chevron-right" onClick={handleMoveToRight}></i>
         </div>
       </div>
     </>
